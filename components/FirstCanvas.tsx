@@ -69,7 +69,7 @@ const FirstCanvas = (props: JSX.IntrinsicElements['group']) => {
         />
       </EffectComposer>
       {/* Camera movements */}
-      {/* <CameraRig /> */}
+      <CameraRig />
       {/* Small helper that freezes the shadows for better performance */}
       <BakeShadows />
     </Canvas>
