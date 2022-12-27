@@ -29,7 +29,7 @@ const FirstCanvas = (props: JSX.IntrinsicElements['group']) => {
       />
       {/* Main scene */}
       <group position={[-0, -1, 0]}>
-        <Computers />
+        <Computers scale={0.5} position={[0, -0.0001, 0]} />
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 100]}>
           <planeGeometry args={[50, 50]} />
           <MeshReflectorMaterial
@@ -81,7 +81,7 @@ const CameraRig = () => {
     easing.damp3(
       state.camera.position,
       [
-        -1 + (state.pointer.x * state.viewport.width) / 7,
+        -1 + (state.pointer.x * state.viewport.width) / 4,
         (1 + state.pointer.y) / 2,
         5.5,
       ],
