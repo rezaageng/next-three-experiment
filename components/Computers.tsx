@@ -9,7 +9,7 @@ Title: Old Computers
 
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
-import { GLTF } from 'three-stdlib';
+import { GLTFResult } from '../@types/computers';
 
 THREE.ColorManagement.legacyMode = false;
 

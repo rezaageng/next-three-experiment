@@ -1,4 +1,6 @@
-type GLTFResult = GLTF & {
+import { GLTF } from 'three-stdlib';
+
+export type GLTFResult = GLTF & {
   nodes: {
     Object_4: THREE.Mesh;
     Object_6: THREE.Mesh;
