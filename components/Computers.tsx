@@ -11,6 +11,7 @@ import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
 import { GLTFResult } from '../@types/computers';
 import ScreenText from './ScreenText';
+import ScreenInteractive from './ScreenInteractive';
 
 THREE.ColorManagement.legacyMode = false;
 
@@ -21,7 +22,7 @@ const Computers = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[0.27, 1.53, -2.61]}>
+      {/* <group position={[0.27, 1.53, -2.61]}>
         <mesh
           geometry={nodes.Object_206.geometry}
           material={materials.Texture}
@@ -30,7 +31,7 @@ const Computers = (props: JSX.IntrinsicElements['group']) => {
           geometry={nodes.Object_207.geometry}
           material={materials.Screen}
         />
-      </group>
+      </group> */}
 
       <mesh
         geometry={nodes.Object_4.geometry}
@@ -698,6 +699,11 @@ const Computers = (props: JSX.IntrinsicElements['group']) => {
         position={[3.2, 4.29, -3.09]}
         rotation={[0, -0.56, 0]}
         scale={[-1, 1, 1]}
+      />
+      <ScreenInteractive
+        frame="Object_206"
+        panel="Object_207"
+        position={[0.27, 1.53, -2.61]}
       />
       <ScreenText
         frame="Object_209"
