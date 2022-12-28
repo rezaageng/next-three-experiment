@@ -22,17 +22,6 @@ const Computers = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      {/* <group position={[0.27, 1.53, -2.61]}>
-        <mesh
-          geometry={nodes.Object_206.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_207.geometry}
-          material={materials.Screen}
-        />
-      </group> */}
-
       <mesh
         geometry={nodes.Object_4.geometry}
         material={materials.Texture}
