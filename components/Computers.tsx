@@ -10,12 +10,13 @@ Title: Old Computers
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
 import { GLTFResult } from '../@types/computers';
+import ScreenText from './ScreenText';
 
 THREE.ColorManagement.legacyMode = false;
 
 const Computers = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(
-    '/computers.glb'
+    '/assets/3d-models/computers.glb'
   ) as unknown as GLTFResult;
 
   return (
@@ -30,94 +31,7 @@ const Computers = (props: JSX.IntrinsicElements['group']) => {
           material={materials.Screen}
         />
       </group>
-      <group position={[-1.43, 2.5, -1.8]} rotation={[0, 1, 0]}>
-        <mesh
-          geometry={nodes.Object_209.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_210.geometry}
-          material={materials.Screen}
-        />
-      </group>
-      <group position={[-2.73, 0.63, -0.52]} rotation={[0, 1.09, 0]}>
-        <mesh
-          geometry={nodes.Object_212.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_213.geometry}
-          material={materials.Screen}
-        />
-      </group>
-      <group position={[1.84, 0.38, -1.77]} rotation={[0, -Math.PI / 9, 0]}>
-        <mesh
-          geometry={nodes.Object_215.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_216.geometry}
-          material={materials.Screen}
-        />
-      </group>
-      <group
-        position={[3.11, 2.15, -0.18]}
-        rotation={[0, -0.79, 0]}
-        scale={0.81}
-      >
-        <mesh
-          geometry={nodes.Object_218.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_219.geometry}
-          material={materials.Screen}
-        />
-      </group>
-      <group position={[-3.42, 3.06, 1.3]} rotation={[0, 1.22, 0]} scale={0.9}>
-        <mesh
-          geometry={nodes.Object_221.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_222.geometry}
-          material={materials.Screen}
-        />
-      </group>
-      <group position={[-3.9, 4.29, -2.64]} rotation={[0, 0.54, 0]}>
-        <mesh
-          geometry={nodes.Object_224.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_225.geometry}
-          material={materials.Screen}
-        />
-      </group>
-      <group
-        position={[0.99, 4.29, -4.21]}
-        rotation={[0, 0.43, 0]}
-        scale={[-1, 1, 1]}
-      >
-        <mesh
-          geometry={nodes.Object_227.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_228.geometry}
-          material={materials.Screen}
-        />
-      </group>
-      <group position={[4.68, 4.29, -1.56]} rotation={[0, -Math.PI / 3, 0]}>
-        <mesh
-          geometry={nodes.Object_230.geometry}
-          material={materials.Texture}
-        />
-        <mesh
-          geometry={nodes.Object_231.geometry}
-          material={materials.Screen}
-        />
-      </group>
+
       <mesh
         geometry={nodes.Object_4.geometry}
         material={materials.Texture}
@@ -785,9 +699,69 @@ const Computers = (props: JSX.IntrinsicElements['group']) => {
         rotation={[0, -0.56, 0]}
         scale={[-1, 1, 1]}
       />
+      <ScreenText
+        frame="Object_209"
+        panel="Object_210"
+        y={5}
+        position={[-1.43, 2.5, -1.8]}
+        rotation={[0, 1, 0]}
+        x={0}
+      />
+      <ScreenText
+        invert
+        frame="Object_212"
+        panel="Object_213"
+        x={-5}
+        y={5}
+        position={[-2.73, 0.63, -0.52]}
+        rotation={[0, 1.09, 0]}
+      />
+      <ScreenText
+        invert
+        frame="Object_215"
+        panel="Object_216"
+        position={[1.84, 0.38, -1.77]}
+        rotation={[0, -Math.PI / 9, 0]}
+      />
+      <ScreenText
+        invert
+        frame="Object_218"
+        panel="Object_219"
+        x={-5}
+        position={[3.11, 2.15, -0.18]}
+        rotation={[0, -0.79, 0]}
+        scale={0.81}
+      />
+      <ScreenText
+        frame="Object_221"
+        panel="Object_222"
+        y={5}
+        position={[-3.42, 3.06, 1.3]}
+        rotation={[0, 1.22, 0]}
+        scale={0.9}
+      />
+      <ScreenText
+        invert
+        frame="Object_224"
+        panel="Object_225"
+        position={[-3.9, 4.29, -2.64]}
+        rotation={[0, 0.54, 0]}
+      />
+      <ScreenText
+        frame="Object_227"
+        panel="Object_231"
+        position={[0.99, 4.29, -4.21]}
+        rotation={[0, -0.65, 0]}
+      />
+      <ScreenText
+        frame="Object_230"
+        panel="Object_231"
+        position={[4.68, 4.29, -1.56]}
+        rotation={[0, -Math.PI / 3, 0]}
+      />
     </group>
   );
 };
 export default Computers;
 
-useGLTF.preload('/computers.glb');
+useGLTF.preload('/assets/3d-models/computers.glb');

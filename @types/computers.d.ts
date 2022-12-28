@@ -128,3 +128,19 @@ export type GLTFResult = GLTF & {
     Screen: THREE.MeshStandardMaterial;
   };
 };
+
+interface ScreenProps {
+  frame: keyof GLTFResult['nodes'];
+  panel: keyof GLTFResult['nodes'];
+  invert?: boolean;
+  x?: number;
+  y?: number;
+}
+
+interface IText {
+  position: {
+    x: number;
+    y: number;
+    z: number;
+  };
+}
