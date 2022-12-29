@@ -1,5 +1,12 @@
 import Head from 'next/head';
 import FirstCanvas from '../components/FirstCanvas';
+import Overlay from '../components/Overlay';
+import { Playfair_Display } from '@next/font/google';
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair-display',
+});
 
 export default function Home() {
   return (
@@ -10,8 +17,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-full h-screen">
+      <main
+        id="main-component"
+        className={`${playfairDisplay.variable} w-full h-screen`}
+      >
         <FirstCanvas />
+        <Overlay />
       </main>
     </>
   );
