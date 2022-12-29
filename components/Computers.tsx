@@ -58,11 +58,6 @@ const Computers = (props: JSX.IntrinsicElements['group']) => {
         scale={0.5}
       />
       <mesh
-        geometry={nodes.Object_14.geometry}
-        material={materials['Material.001']}
-        scale={13}
-      />
-      <mesh
         geometry={nodes.Object_16.geometry}
         material={materials.Texture}
         position={[0.63, 0, -3]}

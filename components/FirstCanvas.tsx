@@ -38,7 +38,7 @@ const FirstCanvas = () => {
       />
       {/* Main scene */}
       <group position={[-0, -1, 0]}>
-        <Computers scale={0.5} position={[0, -0.0001, 0]} />
+        <Computers scale={0.5} />
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 100]}>
           <planeGeometry args={[50, 50]} />
           <MeshReflectorMaterial
