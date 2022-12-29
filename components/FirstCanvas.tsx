@@ -6,14 +6,23 @@ import {
   DepthOfField,
 } from '@react-three/postprocessing';
 import { easing } from 'maath';
+import { useEffect, useState } from 'react';
 import Computers from './Computers';
 
-const FirstCanvas = (props: JSX.IntrinsicElements['group']) => {
+const FirstCanvas = () => {
+  const [eventSource, setEventSource] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!document) return;
+    setEventSource(document?.getElementById('main-component') as HTMLElement);
+  }, []);
+
   return (
     <Canvas
       shadows
       dpr={[1, 1.5]}
       camera={{ position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20 }}
+      eventSource={eventSource as HTMLElement}
       eventPrefix="client"
     >
       {/* Lights */}
